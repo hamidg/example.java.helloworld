@@ -48,6 +48,7 @@ object CompileJavaFile : BuildType({
             name = "Compile Java"
             id = "Compile"
             scriptContent = """
+                #!/bin/bash -x
                 javac HelloWorld/Main.java
                 echo "Job completed"
                 echo "Job completed" > job.tct
