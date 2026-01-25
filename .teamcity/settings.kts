@@ -57,6 +57,15 @@ object CompileJavaFile : BuildType({
                 echo "Job completed" > job.txt
             """.trimIndent()
         }
+        script{
+            name = "Run JAR file"
+            id = "JAR"
+            scriptContent = """
+                #!/bin/bash
+                echo "Running the jar file"
+                jar cfme Main.jar Manifest.txt HelloWorld.Main HelloWorld/Main.class
+            """.trimIndent()
+        }
         
     }
 
