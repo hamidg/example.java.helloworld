@@ -45,28 +45,42 @@ object CompileJavaFile : BuildType({
 
     steps {
         script {
-            name = "Compile and run Class"
-            id = "Compile"
+            name = "Compile Class"
+            id = "CompileClass"
             scriptContent = """
                 #!/bin/bash
                 echo "Compile Class"
                 javac HelloWorld/Main.java
+                echo "Job completed"
+            """.trimIndent()
+        }
+        script {
+            name = "Run Class"
+            id = "RunClass"
+            scriptContent = """
+                #!/bin/bash
                 echo "Run class"
                 java -cp . HelloWorld.Main
-                echo "Job completed"
-                echo "Job completed" > job.txt
+            """.trimIndent()
+        }
+        script{
+            name = "Create JAR file"
+            id = "CreateJAR"
+            scriptContent = """
+                #!/bin/bash
+                echo "Creating the jar file"
+                jar cfme Main.jar Manifest.txt HelloWorld.Main HelloWorld/Main.class
             """.trimIndent()
         }
         script{
             name = "Run JAR file"
-            id = "JAR"
+            id = "RunJAR"
             scriptContent = """
                 #!/bin/bash
                 echo "Running the jar file"
-                jar cfme Main.jar Manifest.txt HelloWorld.Main HelloWorld/Main.class
+                java -jar Main.jar
             """.trimIndent()
         }
-        
     }
 
     triggers {
