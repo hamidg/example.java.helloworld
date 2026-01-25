@@ -48,10 +48,10 @@ object CompileJavaFile : BuildType({
             name = "Compile Java"
             id = "Compile"
             scriptContent = """
-                #!/bin/bash -x
+                #!/bin/bash
                 javac HelloWorld/Main.java
                 echo "Job completed"
-                echo "Job completed" > job.tct
+                echo "Job completed" > job.txt
             """.trimIndent()
         }
     }
