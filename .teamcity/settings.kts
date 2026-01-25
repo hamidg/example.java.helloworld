@@ -52,7 +52,7 @@ object CompileJavaFile : BuildType({
                 echo "Compile Class"
                 javac HelloWorld/Main.java
                 echo "Run class"
-                java -cp . HelloWorld.Main"
+                java -cp . HelloWorld.Main
                 echo "Job completed"
                 echo "Job completed" > job.txt
             """.trimIndent()
