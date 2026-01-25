@@ -100,19 +100,4 @@ object CompileJavaFile : BuildType({
 
 object JavaExample : Project({
     name = "Java Example"
-
-    buildType(JavaExample_Build)
-})
-
-object JavaExample_Build : BuildType({
-    name = "Build"
-
-    vcs {
-        root(DslContext.settingsRoot)
-    }
-
-    features {
-        perfmon {
-        }
-    }
 })
