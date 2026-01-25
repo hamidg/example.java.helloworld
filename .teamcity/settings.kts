@@ -45,15 +45,19 @@ object CompileJavaFile : BuildType({
 
     steps {
         script {
-            name = "Compile Java"
+            name = "Compile and run Class"
             id = "Compile"
             scriptContent = """
                 #!/bin/bash
+                echo "Compile Class"
                 javac HelloWorld/Main.java
+                echo "Run class"
+                java -cp . HelloWorld.Main"
                 echo "Job completed"
                 echo "Job completed" > job.txt
             """.trimIndent()
         }
+        
     }
 
     triggers {
