@@ -63,7 +63,7 @@ object CompileJavaFile : BuildType({
                 java -cp . HelloWorld.Main
             """.trimIndent()
         }
-        script{
+        script {
             name = "Create JAR file"
             id = "CreateJAR"
             scriptContent = """
@@ -72,7 +72,7 @@ object CompileJavaFile : BuildType({
                 jar cfme Main.jar Manifest.txt HelloWorld.Main HelloWorld/Main.class
             """.trimIndent()
         }
-        script{
+        script {
             name = "Run JAR file"
             id = "RunJAR"
             scriptContent = """
