@@ -30,10 +30,15 @@ version = "2025.11"
 project {
     description = "Top Level project"
 
-    buildType(CompileJavaFile)
-
     subProject(JavaExample)
 }
+
+
+object JavaExample : Project({
+    name = "Java Example"
+
+    buildType(CompileJavaFile)
+})
 
 object CompileJavaFile : BuildType({
     name = "Compile_Java_file"
@@ -95,9 +100,4 @@ object CompileJavaFile : BuildType({
         perfmon {
         }
     }
-})
-
-
-object JavaExample : Project({
-    name = "Java Example"
 })
