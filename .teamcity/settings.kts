@@ -31,6 +31,8 @@ project {
     description = "Top Level project"
 
     buildType(CompileJavaFile)
+
+    subProject(JavaExample)
 }
 
 object CompileJavaFile : BuildType({
@@ -93,4 +95,9 @@ object CompileJavaFile : BuildType({
         perfmon {
         }
     }
+})
+
+
+object JavaExample : Project({
+    name = "Java Example"
 })
