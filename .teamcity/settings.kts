@@ -25,7 +25,7 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 'Debug' option is available in the context menu for the task.
 */
 
-version = "2025.11"
+version = "2026.2"
 
 project {
     description = "Top Level project"
@@ -86,6 +86,7 @@ object CompileJavaFile : BuildType({
                 #!/bin/bash
                 echo "Running the jar file"
                 java -jar Main.jar
+                echo ${'$'}PWD
             """.trimIndent()
         }
     }
