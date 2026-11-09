@@ -86,6 +86,7 @@ object CompileJavaFile : BuildType({
                 #!/bin/bash
                 echo "Running the jar file"
                 java -jar Main.jar
+                ls
                 echo ${'$'}PWD
             """.trimIndent()
         }
