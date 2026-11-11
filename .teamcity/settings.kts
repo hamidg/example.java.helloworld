@@ -30,6 +30,16 @@ version = "2026.2"
 project {
     description = "Top Level project"
 
+    cleanup {
+        keepRule {
+            id = "KEEP_RULE_1"
+            keepAtLeast = allBuilds()
+            dataToKeep = everything()
+            applyPerEachBranch = true
+            preserveArtifactsDependencies = true
+        }
+    }
+
     subProject(JavaExample)
 }
 
