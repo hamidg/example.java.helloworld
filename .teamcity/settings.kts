@@ -75,7 +75,7 @@ object BuildJava : BuildType({
             scriptContent = """
                 #!/bin/bash
                 echo "Running the jar file"
-                ls -l
+                ls -la
                 java -jar Main.jar
                 # echo ${'$'}{'${'$'}'}PWD
             """.trimIndent()
